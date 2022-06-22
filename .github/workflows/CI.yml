@@ -27,11 +27,11 @@ jobs:
       contents: read
     
     steps:
-      - uses: gliech/create-github-secret-action@v1
-        with:
-          name: FRONT_DOOR_PASSWORD
-          value: Eternia
-          pa_token: ${{ secrets.PA_TOKEN }}
+      - name: Demonstrate Github Secrets
+        with: # Set Azure credentials secret as an input
+         credentials: ${{ secrets.PA_TOKEN }}
+        env: # Or as an environment variable
+         credentials: ${{ secrets.PA_TOKEN }}
        
       - uses: actions/checkout@v3
 
