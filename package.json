@@ -5,9 +5,9 @@
     "main": "app.js",
     "license": "MIT",
     "devDependencies": {
-      "express": "latest"
+      // "express": "latest"
     },
     "dependencies": {
-      "express": "latest"
+      // "express": "latest",
     }
 } 
