@@ -15,7 +15,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: node_app
+  IMAGE_NAME: node_app:v1.0.0
   credentials: ${{ secrets.PA_TOKEN }}
 
 jobs:
