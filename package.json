@@ -1,7 +1,13 @@
 {
-  "name": "node-app-argocd-demo",
-  "version": "1.0.0"
+    "name": "node-app-demo",
+    "version": "1.0.0",
+    "description": "A demo of argocd",
+    "main": "app.js",
+    "license": "MIT",
+    "devDependencies": {
+      "express": "latest"
+    },
     "dependencies": {
-    "express": "latest"
-  }
-}
+      "express": "latest"
+    }
+} 
