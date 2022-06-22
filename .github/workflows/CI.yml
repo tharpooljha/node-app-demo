@@ -25,14 +25,19 @@ jobs:
     permissions:
       packages: write
       contents: read
-
+    
     steps:
+      - uses: gliech/create-github-secret-action@v1
+        with:
+        name: FRONT_DOOR_PASSWORD
+        value: Eternia
+         pa_token: ${{ secrets.PA_TOKEN }}
+       
       - uses: actions/checkout@v3
-      - name: Github Secrets in Action
-        with: # Set the secret as an input
-         super_secret: ${{ secrets.SuperSecret }}
-        env: # Or as an environment variable
-          super_secret: ${{ secrets.SuperSecret }}      
+
+        run: |
+          example-command "$SUPER_SECRET"
+      
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
 
