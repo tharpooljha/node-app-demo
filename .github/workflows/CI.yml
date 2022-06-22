@@ -28,12 +28,9 @@ jobs:
     
     steps:        
       - uses: actions/checkout@v3
-      
-#       - name: Demonstrate Github Secrets
-#         with: # Set Azure credentials secret as an input
-#          credentials: ${{ secrets.PA_TOKEN }}
-#         env: # Or as an environment variable
-#          credentials: ${{ secrets.PA_TOKEN }}
+      - name: Demonstrate Github Secrets
+        env: # Or as an environment variable
+         credentials: ${{ secrets.PA_TOKEN }}
       
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
