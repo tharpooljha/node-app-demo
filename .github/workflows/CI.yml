@@ -15,7 +15,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: node_app:1.0.0
+  IMAGE_NAME: node_app
 
 jobs:
   # Push image to GitHub Packages.
@@ -28,7 +28,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
+      - name: Github Secrets in Action
+        with: # Set the secret as an input
+         super_secret: ${{ secrets.SuperSecret }}
+         env: # Or as an environment variable
+          super_secret: ${{ secrets.SuperSecret }}      
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
 
