@@ -28,7 +28,7 @@ jobs:
     
     steps:        
       - uses: actions/checkout@v3
-      - name: Demonstrate Github Secrets
+        name: Demonstrate Github Secrets
         env: # Or as an environment variable
          credentials: ${{ secrets.PA_TOKEN }}
       
